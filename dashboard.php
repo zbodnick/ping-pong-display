@@ -70,30 +70,30 @@ if (isset($_GET['on'])) {
                       <!-- <h2 class="card-title">Control Panel</h2> -->
                     </div>
                     </div>
-                    <div class="row justify-content-center align-items-center">
-                    <div class="col-lg">
-                      <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-sm btn-primary btn-simple active" id="0">
-                          <a href="dashboard.php?on=1 type="radio" checked>
-                          <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">ON</span>
-                          <span class="d-block d-sm-none">
-                            <i class="tim-icons icon-single-02"></i>
-                          </span>
-                        </label>
-                        <label class="btn btn-sm btn-primary btn-simple" id="1">
-                          <a href="dashboard.php?off=1" type="radio" class="d-none d-sm-none">
-                          <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">OFF</span>
-                          <span class="d-block d-sm-none">
-                            <i class="tim-icons icon-gift-2"></i>
-                          </span>
-                        </label>
-                      </div>
+
+                </div class="col-lg">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="dashboard.php?on=1" class="btn btn-primary">ON</button>
+                    <a href="dashboard.php?off=1" class="btn btn-primary">OFF</button>
+                    </div>
                     </div>
                   </div>
                 </div>
+
+                </div class="col-lg">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="dashboard.php?on=energy" class="btn btn-primary">ENERGY</button>
+                    <a href="dashboard.php?on=scroll" class="btn btn-primary">SCROLL</button>
+                    <a href="dashboard.php?on=spectrum" class="btn btn-primary">SPECTRUM</button>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+
+                </div>
                 <div class="card-body" style="height: 9rem;">
                   <div class="chart-area">
-                    <div class="dropdown">
+                    <!-- <div class="dropdown">
                       <button type="button" class="btn btn-link dropdown-toggle btn-icon" data-toggle="dropdown" aria-expanded="false">
                         <i class="tim-icons icon-settings-gear-63"></i>
                       </button>
@@ -102,7 +102,7 @@ if (isset($_GET['on'])) {
                         <a class="dropdown-item" href="dashboard.php?on=spectrum">Spectrum</a>
                         <a class="dropdown-item" href="dashboard.php?on=scroll">Scroll</a>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 </div>
