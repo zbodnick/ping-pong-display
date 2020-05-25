@@ -1,18 +1,3 @@
-<!--
-=========================================================
-* * Black Dashboard - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/black-dashboard
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,60 +42,58 @@ if (isset($_GET['on'])) {
 
 <body class="">
   <div class="wrapper">
-      <div class="content">
+        <div class="content">
+            <div class="container">
 
-        <div class="container">
-          <div class="row align-items-center mt-5">
-            <div class="col-6 mx-auto mt-5">
-              <div class="card mx-auto border-primary justify-content-center card-chart mt-5" style="width: 50%;">
-                <div class="card-header">
-                  <div class="row">
-                    <div class="col-sm-6 text-left">
-                      <h5 class="card-category">Control Panel</h5>
-                      <!-- <h2 class="card-title">Control Panel</h2> -->
-                    </div>
-                    </div>
+                <div class="card mx-auto w-50">
 
-                </div class="col-lg">
+                    <h5 class="card-header primary-color white-text text-center py-4">
+                        <strong>Control Panel</strong>
+                    </h5>
 
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <div class="row">
-                            <div class="col-lg">
-                                <a href="dashboard.php?on=1" class="btn btn-block btn-success">ON</a>
-                                <a href="dashboard.php?off=1" class="btn btn-block btn-danger">OFF</a>
+                    <div class="card-body px-lg-5 pt-0">
+
+                        <form class="md-form">
+
+                            <div class="switch my-3 py-3">
+                                <label>
+                                    Off
+                                    <input type="checkbox" checked="checked" id="switch">
+                                    <span class="lever"></span>
+                                    On
+                                </label>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg">
-                                <a href="dashboard.php?on=energy" class="btn btn-block btn-primary">ENERGY</a>
-                                <a href="dashboard.php?on=scroll" class="btn btn-block btn-primary">SCROLL</a>
-                                <a href="dashboard.php?on=spectrum" class="btn btn-block btn-primary">SPECTRUM</a>
+
+                            <div>
+                                <select class="mdb-select md-form mb-4 initialized" id="select">
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="3">Option 3</option>
+                                </select>
+                            </div>
+
+                            <div class="file-field">
+                                <div class="btn btn-primary btn-sm float-left ">
+                                    <span>Choose file</span>
+                                    <input type="file" id="fileInput">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Upload image">
                                 </div>
                             </div>
-                        </div>
+
+
+                            <button class="btn btn-outline-primary btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Save</button>
+
+                        </form>
                     </div>
-                    </div>
-                  </div>
                 </div>
 
-                </div>
-                <div class="card-body" style="height: 9rem;">
-                  <!-- <div class="chart-area">
-                    <div class="dropdown">
-                      <button type="button" class="btn btn-link dropdown-toggle btn-icon" data-toggle="dropdown" aria-expanded="false">
-                        <i class="tim-icons icon-settings-gear-63"></i>
-                      </button>
-                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink" x-placement="top-end" style="position: absolute; transform: translate3d(-122px, -145px, 0px); top: 0px; left: 0px; will-change: transform;">
-                        <a class="dropdown-item" href="dashboard.php?on=energy">Energy</a>
-                        <a class="dropdown-item" href="dashboard.php?on=spectrum">Spectrum</a>
-                        <a class="dropdown-item" href="dashboard.php?on=scroll">Scroll</a>
-                      </div>
-                    </div>
-                  </div> -->
-                </div>
-                </div>
-          </div>
-        </div>
+            </div>
+       </div>
+</div>
+
   <!--   Core JS Files   -->
   <script src="assets/js/core/jquery.min.js"></script>
   <script src="assets/js/core/popper.min.js"></script>
@@ -126,137 +109,9 @@ if (isset($_GET['on'])) {
   <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="assets/demo/demo.js"></script>
-  <script>
-
-    $(function() {
-        $('.myradio:not(:checked)').on('change', function() {
-            window.location.href = "http://www.example.com?variable=" + this.value;
-        });
-    });
-
-    $(document).ready(function() {
-      $().ready(function() {
-        $sidebar = $('.sidebar');
-        $navbar = $('.navbar');
-        $main_panel = $('.main-panel');
-
-        $full_page = $('.full-page');
-
-        $sidebar_responsive = $('body > .navbar-collapse');
-        sidebar_mini_active = true;
-        white_color = false;
-
-        window_width = $(window).width();
-
-        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-
-        $('.fixed-plugin a').click(function(event) {
-          if ($(this).hasClass('switch-trigger')) {
-            if (event.stopPropagation) {
-              event.stopPropagation();
-            } else if (window.event) {
-              window.event.cancelBubble = true;
-            }
-          }
-        });
-
-        $('.fixed-plugin .background-color span').click(function() {
-          $(this).siblings().removeClass('active');
-          $(this).addClass('active');
-
-          var new_color = $(this).data('color');
-
-          if ($sidebar.length != 0) {
-            $sidebar.attr('data', new_color);
-          }
-
-          if ($main_panel.length != 0) {
-            $main_panel.attr('data', new_color);
-          }
-
-          if ($full_page.length != 0) {
-            $full_page.attr('filter-color', new_color);
-          }
-
-          if ($sidebar_responsive.length != 0) {
-            $sidebar_responsive.attr('data', new_color);
-          }
-        });
-
-        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
-          var $btn = $(this);
-
-          if (sidebar_mini_active == true) {
-            $('body').removeClass('sidebar-mini');
-            sidebar_mini_active = false;
-            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
-          } else {
-            $('body').addClass('sidebar-mini');
-            sidebar_mini_active = true;
-            blackDashboard.showSidebarMessage('Sidebar mini activated...');
-          }
-
-          // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function() {
-            window.dispatchEvent(new Event('resize'));
-          }, 180);
-
-          // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
-            clearInterval(simulateWindowResize);
-          }, 1000);
-        });
-
-        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
-          var $btn = $(this);
-
-          if (white_color == true) {
-
-            $('body').addClass('change-background');
-            setTimeout(function() {
-              $('body').removeClass('change-background');
-              $('body').removeClass('white-content');
-            }, 900);
-            white_color = false;
-          } else {
-
-            $('body').addClass('change-background');
-            setTimeout(function() {
-              $('body').removeClass('change-background');
-              $('body').addClass('white-content');
-            }, 900);
-
-            white_color = true;
-          }
-
-
-        });
-
-        $('.light-badge').click(function() {
-          $('body').addClass('white-content');
-        });
-
-        $('.dark-badge').click(function() {
-          $('body').removeClass('white-content');
-        });
-      });
-    });
-  </script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
-
-    });
-  </script>
+  
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-  <script>
-    window.TrackJS &&
-      TrackJS.install({
-        token: "ee6fab19c5a04ac1a32a645abde4613a",
-        application: "black-dashboard-free"
-      });
-  </script>
+  
 </body>
 
 </html>
