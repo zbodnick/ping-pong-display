@@ -70,7 +70,7 @@ if (isset($_GET['on'])) {
                         <form class="md-form">
 
                             <div class="wrap">
-                                <div class="btn btn-dark btn-circle btn-xl"><i class="tim-icons icon-button-power"></i></div>
+                                <div class="btn btn-dark btn-circle btn-xl"><i class="tim-icons icon-button-power btn-xl"></i></div>
                             </div>
 
                             <div class="dropdown">
