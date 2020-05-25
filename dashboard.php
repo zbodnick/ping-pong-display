@@ -59,10 +59,10 @@ if (isset($_GET['on'])) {
   <div class="wrapper">
       <div class="content">
 
-        <div class="container h-100">
-          <div class="row align-items-center h-50 mt-5">
+        <div class="container">
+          <div class="row align-items-center mt-5">
             <div class="col-6 mx-auto mt-5">
-              <div class="card h-100 mx-auto border-primary justify-content-center card-chart mt-5">
+              <div class="card mx-auto border-primary justify-content-center card-chart mt-5">
                 <div class="card-header">
                   <div class="row">
                     <div class="col-sm-6 text-left">
@@ -76,15 +76,15 @@ if (isset($_GET['on'])) {
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <div class="row">
                             <div class="col-lg">
-                                <a href="dashboard.php?on=1" class="btn btn-success">ON</a>
-                                <a href="dashboard.php?off=1" class="btn btn-danger">OFF</a>
+                                <a href="dashboard.php?on=1" class="btn btn-block btn-success">ON</a>
+                                <a href="dashboard.php?off=1" class="btn btn-block btn-danger">OFF</a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg">
-                                <a href="dashboard.php?on=energy" class="btn btn-primary">ENERGY</a>
-                                <a href="dashboard.php?on=scroll" class="btn btn-primary">SCROLL</a>
-                                <a href="dashboard.php?on=spectrum" class="btn btn-primary">SPECTRUM</a>
+                                <a href="dashboard.php?on=energy" class="btn btn-block btn-primary">ENERGY</a>
+                                <a href="dashboard.php?on=scroll" class="btn btn-block btn-primary">SCROLL</a>
+                                <a href="dashboard.php?on=spectrum" class="btn btn-block btn-primary">SPECTRUM</a>
                                 </div>
                             </div>
                         </div>
