@@ -62,7 +62,7 @@ if (isset($_GET['on'])) {
         <div class="container h-100">
           <div class="row align-items-center h-50 mt-5">
             <div class="col-6 mx-auto mt-5">
-              <div class="card h-100 mx-auto border-primary justify-content-center card-chart mt-5" style="width: 18rem;">
+              <div class="card h-100 mx-auto border-primary justify-content-center card-chart mt-5">
                 <div class="card-header">
                   <div class="row">
                     <div class="col-sm-6 text-left">
