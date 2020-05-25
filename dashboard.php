@@ -21,73 +21,6 @@
 
 
     <style>
-        html{
-        height: 100%;
-        }
-        body{
-        padding-top: 60px;
-        height: 100%;
-        background: rgb(247,246,246); 
-        background: linear-gradient(top, rgb(247,246,246) 0%,rgb(209,208,206) 100%);
-        background-size: 100%;
-        }
-        .wrap{
-        margin: 0 auto;
-        width: 300px;
-        }
-
-        .btn{
-        position: relative;
-        float: left;
-        margin: 40px;
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        background: rgb(231,231,231);
-        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2QwZDBkMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZGZkZmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-        box-shadow: inset 0 5px 1px -1px #F0F0F0, inset 0 -3px 1px 1px #C3C3C3, 0 3px 5px 0 rgba(0,0,0, .7);
-        color: #BBB9B7;
-        text-align: center;
-        font-size: 40px;
-        line-height: 70px;
-        cursor: pointer;
-        transition: all .4s ease;
-        }
-
-        .btn:hover{
-        color: #FF6500; 
-        }
-
-        .btn.active{
-        color: #FF6500; 
-        }
-
-        .btn:after{
-        position: absolute;
-        top: -15px;
-        left: -15px;
-        z-index: -1;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background: red;
-        background: rgba(233,230,228, .8);
-        background: -webkit-linear-gradient(top, rgba(255,151,0,0) 2%,rgba(255,151,0,0) 42%,rgba(254,148,0,0) 44%,rgba(233,63,0,1) 100%);
-        background: -moz-linear-gradient(top, rgba(255,151,0,0) 2%, rgba(255,151,0,0) 42%, rgba(254,148,0,0) 44%, rgba(233,63,0,1) 100%);
-        background-position: 0 350px;
-        background-size:100px 450px;
-        box-shadow: inset 0 1px 3px 0px rgba(0,0,0, .6), 0 1px 2px 0 #fff;
-        content: "";
-        transition: background-position 1s ease; 
-        }
-
-        .btn:hover:after{
-        background-position: 0px 260px;
-        }
-
-        .btn.active:after{
-        background-position: 0px 100px;
-        }
     </style>
 
 
@@ -159,9 +92,16 @@ if (isset($_GET['on'])) {
 </div>
 
 <script>
-$('.btn').bind('click', function(){
-  $(this).toggleClass('active');
-});
+// $('.power-button').click(function(){
+//   if ($(this).hasClass('on')){
+//     $(this).removeClass('on');
+//     location.href=("dashboard.php?off=1");
+//   }
+//   else {
+//     $(this).addClass('on');
+//     location.href=("dashboard.php?on=1");
+//   }
+// });
 </script>
 
   <!--   Core JS Files   -->
