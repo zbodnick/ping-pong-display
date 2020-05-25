@@ -21,6 +21,14 @@
 
 
     <style>
+        .btn-circle.btn-xl { 
+            width: 70px; 
+            height: 70px; 
+            padding: 10px 16px; 
+            border-radius: 35px; 
+            font-size: 12px; 
+            text-align: center; 
+        } 
     </style>
 
 
@@ -61,15 +69,11 @@ if (isset($_GET['on'])) {
 
                         <form class="md-form">
 
-                            <a class="power-button on">
-                                <i class="tim-icons icon-button-power"></i>
-                            </a>
-
                             <div class="wrap">
-                                <div class="btn"><i class="tim-icons icon-button-power"></i></div>
+                                <div class="btn btn-dark btn-circle btn-xl"><i class="tim-icons icon-button-power"></i></div>
                             </div>
 
-                            <div class="dropdown show">
+                            <div class="dropdown">
                                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Select Effect
                                 </a>
@@ -92,16 +96,16 @@ if (isset($_GET['on'])) {
 </div>
 
 <script>
-// $('.power-button').click(function(){
-//   if ($(this).hasClass('on')){
-//     $(this).removeClass('on');
-//     location.href=("dashboard.php?off=1");
-//   }
-//   else {
-//     $(this).addClass('on');
-//     location.href=("dashboard.php?on=1");
-//   }
-// });
+$('.btn-circle').click(function(){
+  if ($(this).hasClass('on')){
+    $(this).removeClass('on');
+    location.href=("dashboard.php?off=1");
+  }
+  else {
+    $(this).addClass('on');
+    location.href=("dashboard.php?on=1");
+  }
+});
 </script>
 
   <!--   Core JS Files   -->
