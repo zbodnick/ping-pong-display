@@ -23,8 +23,8 @@
     <style>
         a.power-button{
         display: block;
-        width: 200px;
-        height: 200px;
+        width: 20%;
+        height: 20%;
         font-size: 8em;
         border: 2px solid #dedede;
         background-color: #efefef;
@@ -94,16 +94,7 @@ if (isset($_GET['on'])) {
 
                         <form class="md-form">
 
-                            <div class="switch my-3 py-3">
-                                <label>
-                                    Off
-                                    <input type="checkbox" checked="checked" id="switch">
-                                    <span class="lever"></span>
-                                    On
-                                </label>
-                            </div>
-
-                            <a class="power-button">
+                            <a class="power-button on">
                                 <i class="tim-icons icon-button-power"></i>
                             </a>
 
@@ -133,11 +124,11 @@ if (isset($_GET['on'])) {
 $('.power-button').click(function(){
   if ($(this).hasClass('on')){
     $(this).removeClass('on');
-    header ("dashboard.php?off=1");
+    location.href=("dashboard.php?off=1");
   }
   else {
     $(this).addClass('on');
-    header ("dashboard.php?on=1");
+    location.href=("dashboard.php?on=1");
   }
 });
 </script>
