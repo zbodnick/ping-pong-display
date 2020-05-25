@@ -79,12 +79,15 @@ if (isset($_GET['on'])) {
                                 <a href="dashboard.php?on=1" class="btn btn-success">ON</a>
                                 <a href="dashboard.php?off=1" class="btn btn-danger">OFF</a>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-lg">
                                 <a href="dashboard.php?on=energy" class="btn btn-primary">ENERGY</a>
                                 <a href="dashboard.php?on=scroll" class="btn btn-primary">SCROLL</a>
                                 <a href="dashboard.php?on=spectrum" class="btn btn-primary">SPECTRUM</a>
                                 </div>
                             </div>
+                        </div>
                     </div>
                     </div>
                   </div>
