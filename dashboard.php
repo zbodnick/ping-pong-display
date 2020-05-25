@@ -18,6 +18,45 @@
   <link href="assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="assets/demo/demo.css" rel="stylesheet" />
+
+
+    <style>
+        a.power-button{
+        display: block;
+        width: 200px;
+        height: 200px;
+        font-size: 8em;
+        border: 2px solid #dedede;
+        background-color: #efefef;
+        box-shadow: 0px 0px 40px 1px #ddd inset,
+            0px 2px 4px rgba(0,0,0,0.4),
+            1px 1px 4px rgba(0,0,0,0.3),
+            -1px -1px 2px rgba(0,0,0,0.1),
+            -1px 1px 2px rgba(0,0,0,0.1);
+        text-align: center;
+        line-height: 200px;
+        
+        left: 0;
+        right: 0;
+        
+        margin: auto;
+        
+        border-radius: 50%;
+        transition: color 0.8s;
+        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        }
+        .power-button:hover{
+        box-shadow:  0px 2px 6px rgba(0,0,0,0.4),
+            1px 1px 6px rgba(0,0,0,0.3),
+            -1px -1px 4px rgba(0,0,0,0.1),
+            -1px 1px 4px rgba(0,0,0,0.1);
+        }
+        .power-button.on{  
+            color: #2ecc71;
+        }
+    </style>
+
+
 </head>
 
 <?php
@@ -64,27 +103,23 @@ if (isset($_GET['on'])) {
                                 </label>
                             </div>
 
-                            <div>
-                                <select class="mdb-select md-form mb-4 initialized" id="select">
-                                    <option value="" disabled selected>Choose your option</option>
-                                    <option value="1">Option 1</option>
-                                    <option value="2">Option 2</option>
-                                    <option value="3">Option 3</option>
-                                </select>
-                            </div>
+                            <a class="power-button">
+                                <i class="tim-icons icon-button-power"></i>
+                            </a>
 
-                            <div class="file-field">
-                                <div class="btn btn-primary btn-sm float-left ">
-                                    <span>Choose file</span>
-                                    <input type="file" id="fileInput">
-                                </div>
-                                <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text" placeholder="Upload image">
+                            <div class="dropdown show">
+                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Select Effect
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="dashboard.php?on=spectrum">SPECTRUM</a>
+                                    <a class="dropdown-item" href="dashboard.php?on=scroll">SCROLL</a>
+                                    <a class="dropdown-item" href="dashboard.php?on=energy">ENERGY</a>
                                 </div>
                             </div>
 
-
-                            <button class="btn btn-outline-primary btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Save</button>
+                            <!-- <button class="btn btn-outline-primary btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Save</button> -->
 
                         </form>
                     </div>
@@ -93,6 +128,19 @@ if (isset($_GET['on'])) {
             </div>
        </div>
 </div>
+
+<script>
+$('.power-button').click(function(){
+  if ($(this).hasClass('on')){
+    $(this).removeClass('on');
+    header ("dashboard.php?off=1");
+  }
+  else {
+    $(this).addClass('on');
+    header ("dashboard.php?on=1");
+  }
+});
+</script>
 
   <!--   Core JS Files   -->
   <script src="assets/js/core/jquery.min.js"></script>
