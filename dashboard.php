@@ -74,11 +74,17 @@ if (isset($_GET['on'])) {
                 </div class="col-lg">
 
                     <div class="btn-group" role="group" aria-label="Basic example">
-                    <a href="dashboard.php?on=1" class="btn btn-primary">ON</a>
-                    <a href="dashboard.php?off=1" class="btn btn-primary">OFF</a>
-                    <a href="dashboard.php?on=energy" class="btn btn-primary">ENERGY</a>
-                    <a href="dashboard.php?on=scroll" class="btn btn-primary">SCROLL</a>
-                    <a href="dashboard.php?on=spectrum" class="btn btn-primary">SPECTRUM</a>
+                        <div class="row">
+                            <div class="col-lg">
+                                <a href="dashboard.php?on=1" class="btn btn-success">ON</a>
+                                <a href="dashboard.php?off=1" class="btn btn-danger">OFF</a>
+                            </div>
+                            <div class="col-lg">
+                                <a href="dashboard.php?on=energy" class="btn btn-primary">ENERGY</a>
+                                <a href="dashboard.php?on=scroll" class="btn btn-primary">SCROLL</a>
+                                <a href="dashboard.php?on=spectrum" class="btn btn-primary">SPECTRUM</a>
+                                </div>
+                            </div>
                     </div>
                     </div>
                   </div>
