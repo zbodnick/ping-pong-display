@@ -39,17 +39,20 @@
 //exec('nohup sudo python visualization.py spectrum &');
 
 
-if(isset($_GET['off'])) {
+if (isset($_GET['off'])) {
     exec('sudo killall python');
     echo exec('sudo python off.py 2>&1');
 }
 
-if(isset($_GET['on'])) {
-   $visType = $_GET['on'];
-   exec('nohup sudo python visualization.py ' . $visType . ' &');
-} else {
-   echo "nada";
+if (isset($_GET['on'])) {
+    if ($_GET['on'] != 1) {
+        $visType = $_GET['on'];
+        exec('nohup sudo python visualization.py ' . $visType . ' &'); 
+    } else {
+        echo exec('sudo python on.py 2>&1');
+    }
 }
+
 ?>
 
 <body class="">
@@ -71,14 +74,14 @@ if(isset($_GET['on'])) {
                     <div class="col-lg">
                       <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-sm btn-primary btn-simple active" id="0">
-                          <input type="radio" name="options" checked>
+                          <a href="dashboard.php?on=1 type="radio" checked>
                           <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">ON</span>
                           <span class="d-block d-sm-none">
                             <i class="tim-icons icon-single-02"></i>
                           </span>
                         </label>
                         <label class="btn btn-sm btn-primary btn-simple" id="1">
-                          <input type="radio" class="d-none d-sm-none" name="options">
+                          <a href="dashboard.php?off=1" type="radio" class="d-none d-sm-none">
                           <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">OFF</span>
                           <span class="d-block d-sm-none">
                             <i class="tim-icons icon-gift-2"></i>
@@ -95,9 +98,9 @@ if(isset($_GET['on'])) {
                         <i class="tim-icons icon-settings-gear-63"></i>
                       </button>
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink" x-placement="top-end" style="position: absolute; transform: translate3d(-122px, -145px, 0px); top: 0px; left: 0px; will-change: transform;">
-                        <a class="dropdown-item" href="#pablo">Energy</a>
-                        <a class="dropdown-item" href="#pablo">Spectrum</a>
-                        <a class="dropdown-item" href="#pablo">Scroll</a>
+                        <a class="dropdown-item" href="dashboard.php?on=energy">Energy</a>
+                        <a class="dropdown-item" href="dashboard.php?on=spectrum">Spectrum</a>
+                        <a class="dropdown-item" href="dashboard.php?on=scroll">Scroll</a>
                       </div>
                     </div>
                   </div>
@@ -121,6 +124,13 @@ if(isset($_GET['on'])) {
   <script src="assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="assets/demo/demo.js"></script>
   <script>
+
+    $(function() {
+        $('.myradio:not(:checked)').on('change', function() {
+            window.location.href = "http://www.example.com?variable=" + this.value;
+        });
+    });
+
     $(document).ready(function() {
       $().ready(function() {
         $sidebar = $('.sidebar');
